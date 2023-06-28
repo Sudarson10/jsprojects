@@ -9,11 +9,11 @@ const current0El = document.getElementById('current--0');
 const current1El = document.getElementById('current--1');
 const a = document.getElementById('neww0');
 const b = document.getElementById('neww1');
-const diceEl = document.querySelector('.dice');
+
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
-diceEl.classList.add('hidden');
+
 let scores, currentScore, activePlayer, playing;
 
 // Starting conditions
@@ -28,7 +28,7 @@ const init = function () {
     current1El.textContent = 0;
     a.textContent = 0;
     b.textContent = 0;
-    diceEl.classList.add('hidden');
+   
     player0El.classList.remove('player--winner');
     player1El.classList.remove('player--winner');
     player0El.classList.add('player--active');
@@ -43,7 +43,7 @@ const switchPlayer = function () {
     player0El.classList.toggle('player--active');
     player1El.classList.toggle('player--active');
 };
-diceEl.classList.remove('hidden');
+
 
 
 // Rolling dice functionality
@@ -57,7 +57,7 @@ btnRoll.addEventListener('click', function () {
 
         // 2. Display dice
 
-        diceEl.classList.add('hidden');
+       
 
         // 3. Check for rolled 1
         if (dice !== 1) {
@@ -86,7 +86,7 @@ btnHold.addEventListener('click', function () {
         if (scores[activePlayer] >= 100) {
             // Finish the game
             playing = false;
-            diceEl.classList.add('hidden');
+            
 
             document
                 .querySelector(`.player--${activePlayer}`)
